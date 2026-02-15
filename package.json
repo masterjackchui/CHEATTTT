@@ -1,0 +1,27 @@
+{
+  "name": "spellmaster-harness",
+  "version": "1.0.0",
+  "description": "Integrated simulation harness with comprehensive testing",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "build": "node scripts/build.js",
+    "lint": "eslint src/ tests/",
+    "format": "prettier --write \"**/*.{js,json,md}\""
+  },
+  "keywords": [
+    "tampermonkey",
+    "userscript",
+    "automation",
+    "testing"
+  ],
+  "author": "masterjackchui",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1"
+  }
+}
