@@ -141,13 +141,6 @@ test.describe('Spellmaster Integration Tests', () => {
         });
 
         test('should enforce max level cap (999)', async ({ page }) => {
-            // Set level close to max via direct manipulation
-            await page.evaluate(() => {
-                const state = window.__getSpellmasterState__();
-                // We can't directly modify STATE, so we'll simulate many escalations
-                // For testing purposes, let's just hold the key and check it doesn't exceed
-            });
-            
             // Instead, let's test that level increments work properly
             await keyboard.press(page, '3');
             await page.waitForTimeout(150);
@@ -200,7 +193,6 @@ test.describe('Spellmaster Integration Tests', () => {
             // Listen for AudioContext creation
             const audioCreated = page.evaluate(() => {
                 return new Promise((resolve) => {
-                    const originalAudioContext = window.AudioContext || window.webkitAudioContext;
                     let created = false;
                     
                     // Check if already exists
